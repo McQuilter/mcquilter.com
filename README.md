@@ -15,6 +15,14 @@ npm run build    # static export into ./out — deploy that folder anywhere
 Deploy `./out` to GitHub Pages (see `.github/workflows/pages.yml`),
 Netlify, Cloudflare Pages, or any static host.
 
+> **Subpath trap:** GitHub *project* Pages serves this repo at
+> `/mcquilter.com/`, not at `/`. A build with no base path emits
+> root-absolute `/_next/...` links that 404 there, so the CSS/JS never
+> load and the site looks unstyled. The Pages workflow therefore builds
+> with `MCQ_BASE_PATH=/mcquilter.com` and
+> `NEXT_PUBLIC_BASE_PATH=/mcquilter.com`. For a root custom domain
+> (or local dev), build with neither variable set.
+
 ## What's here
 
 - `app/history/` — quilt history, from ancient padded clothing through

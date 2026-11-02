@@ -1,6 +1,7 @@
 "use client";
 import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
+import Link from "next/link";
 import QuiltSvg from "@/components/QuiltSvg";
 import { BLOCKS, BLOCK_MAP, FABRIC_PATTERNS, PALETTES, QuiltDoc, defaultQuilt, slugify } from "@/lib/quilts";
 import { buildFullQuilt } from "@/lib/full-quilt";
@@ -156,7 +157,7 @@ function SimulatorInner() {
       <button className="secondary" onClick={async () => { const url = `${window.location.origin}${window.location.pathname}?q=${encodeShare(quilt)}`; try { await navigator.clipboard.writeText(url); setNotice("Share link copied — anyone opening it gets this exact quilt."); } catch { setNotice(`Share link: ${url}`); } }}>Copy share link</button>
       <label>Load a quilt JSON file</label><input type="file" accept=".json,application/json" onChange={(e) => { const f = e.target.files?.[0]; if (f) loadFile(f); }} />
     </div>
-    <p className="muted">Your work also autosaves in this browser (localStorage) so a refresh does not lose it. That is <em>not</em> the $XDG_CONFIG save — use Save / Download for a file you can keep, back up, and share. See <a href="/save">Save to $XDG_CONFIG</a> for the folder layout and the command-line tool.</p>
+    <p className="muted">Your work also autosaves in this browser (localStorage) so a refresh does not lose it. That is <em>not</em> the $XDG_CONFIG save — use Save / Download for a file you can keep, back up, and share. See <Link href="/save">Save to $XDG_CONFIG</Link> for the folder layout and the command-line tool.</p>
     <h2>Size presets</h2>
     <p><button className="secondary" onClick={() => set({ rows: 4, cols: 5 })}>Crib 4×5</button><button className="secondary" onClick={() => set({ rows: 6, cols: 5 })}>Throw 5×6</button><button className="secondary" onClick={() => set({ rows: 8, cols: 6 })}>Twin 6×8</button><button className="secondary" onClick={() => set({ rows: 8, cols: 8 })}>Queen 8×8</button></p>
   </>);

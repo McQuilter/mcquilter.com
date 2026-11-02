@@ -20,11 +20,16 @@
 // ---------------------------------------------------------------------------
 import { BLOCK_MAP, QuiltDoc, rotatePieces } from "./quilts";
 
+// Site base path at build time (NEXT_PUBLIC_BASE_PATH), e.g.
+// "/mcquilter.com" on GitHub project Pages, "" at a domain root.
+// Pattern hrefs must carry it, or they 404 exactly like /_next/... did.
+const SITE_BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";
 export type FullPattern = {
   id: string;
   name: string;
   format: "svg" | "png";
-  /** Site-relative link, e.g. "/patterns/dots.svg". */
+  /** Site-relative link, e.g. "/patterns/dots.svg" at a root, or
+   *  "/mcquilter.com/patterns/dots.svg" under a Pages subpath. */
   href: string;
   /** Path inside the mcquilter.com repo, e.g. "public/patterns/dots.svg". */
   repoPath?: string;
@@ -167,7 +172,7 @@ export function buildFullQuilt(q: QuiltDoc): FullQuiltDoc {
             id: patternId,
             name: custom ? `Custom pattern (slot ${slot})` : (PATTERN_NAMES[slotDef.pattern] || slotDef.pattern),
             format,
-            href: custom ? slotDef.patternUrl! : `/patterns/${slotDef.pattern}.svg`,
+            href: custom ? slotDef.patternUrl! : `${SITE_BASE}/patterns/${slotDef.pattern}.svg`,
             repoPath: custom ? undefined : `public/patterns/${slotDef.pattern}.svg`,
             custom: custom || undefined,
             baseColor: slotDef.color,
@@ -185,7 +190,7 @@ export function buildFullQuilt(q: QuiltDoc): FullQuiltDoc {
       patternBySlot.set(p.slot, {
         id: p.patternId, name: PATTERN_NAMES[slotDef.pattern] || slotDef.pattern,
         format: slotDef.patternFormat || (slotDef.patternUrl?.toLowerCase().endsWith(".png") ? "png" : "svg"),
-        href: slotDef.patternUrl || `/patterns/${slotDef.pattern}.svg`,
+        href: slotDef.patternUrl || `${SITE_BASE}/patterns/${slotDef.pattern}.svg`,
         repoPath: slotDef.patternUrl ? undefined : `public/patterns/${slotDef.pattern}.svg`,
         custom: !!slotDef.patternUrl || undefined, baseColor: slotDef.color,
       });

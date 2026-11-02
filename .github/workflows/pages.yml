@@ -19,6 +19,11 @@ jobs:
         with: { node-version: 20, cache: npm }
       - run: npm ci
       - run: npm run build
+        env:
+          # Project Pages serves this repo at /mcquilter.com/, not at /.
+          # Without this, /_next/... assets 404 and the site is unstyled.
+          MCQ_BASE_PATH: /mcquilter.com
+          NEXT_PUBLIC_BASE_PATH: /mcquilter.com
       - uses: actions/upload-pages-artifact@v3
         with: { path: ./out }
   deploy:
