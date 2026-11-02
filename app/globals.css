@@ -1,0 +1,30 @@
+:root{--ink:#1a1a1a;--muted:#5a5a5a;--paper:#fffdf7;--accent:#9d0208;--line:#e5ddd0;--card:#fff}
+*{box-sizing:border-box}
+body{margin:0;font-family:Georgia,serif;color:var(--ink);background:var(--paper);line-height:1.55}
+a{color:var(--accent)}
+header.site{border-bottom:3px double var(--ink);padding:14px 20px;display:flex;flex-wrap:wrap;gap:12px;align-items:baseline;justify-content:space-between;background:#fff}
+header.site .brand{font-size:1.6rem;font-weight:700;letter-spacing:.02em;text-decoration:none;color:var(--ink)}
+nav a{margin-right:14px;text-decoration:none;color:var(--ink);font-family:system-ui,sans-serif;font-size:.95rem}
+nav a:hover{text-decoration:underline}
+main{max-width:1080px;margin:0 auto;padding:24px 20px 64px}
+h1{font-size:2.2rem;line-height:1.15;margin:.4em 0}
+h2{margin-top:2em;border-bottom:1px solid var(--line);padding-bottom:.3em}
+h3{margin-top:1.4em}
+.lede{font-size:1.15rem;color:#333}
+.card{border:1px solid var(--line);background:var(--card);border-radius:10px;padding:16px;margin:12px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+button,.btn{display:inline-block;font-family:system-ui,sans-serif;background:var(--accent);color:#fff;border:0;border-radius:6px;padding:9px 14px;cursor:pointer;text-decoration:none;font-size:.95rem;margin:4px 6px 4px 0}
+button.secondary,.btn.secondary{background:#eee;color:#111;border:1px solid #ccc}
+input,select,textarea{font-family:system-ui,sans-serif;padding:7px 9px;border:1px solid #bbb;border-radius:6px;font-size:.95rem}
+label{font-family:system-ui,sans-serif;font-size:.9rem;display:block;margin:8px 0 2px;color:#333}
+small,.muted{color:var(--muted)}
+pre,code{font-family:ui-monospace,Menlo,monospace;font-size:.88rem}
+pre{background:#111;color:#eee;padding:14px;border-radius:8px;overflow:auto;white-space:pre-wrap;word-break:break-word}
+.timeline{border-left:3px solid var(--accent);margin-left:8px;padding-left:18px}
+.timeline article{margin-bottom:22px}
+.controls{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end}
+.controls>div{min-width:150px}
+.swatches{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+.swatch{width:44px;height:44px;border-radius:6px;border:1px solid #999;display:inline-block}
+footer{border-top:3px double var(--ink);padding:20px;text-align:center;color:var(--muted);font-family:system-ui,sans-serif;font-size:.9rem}
+.callout{background:#fef3c7;border:1px solid #f59e0b;border-radius:8px;padding:12px 16px;margin:16px 0}

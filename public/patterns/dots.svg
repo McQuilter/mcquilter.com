@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>McQuilter pattern tile: polka dots (motif in white, overlaid on a base colour)</title>
+  <defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="5" cy="5" r="3" fill="rgba(255,255,255,0.35)"/><circle cx="15" cy="15" r="3" fill="rgba(255,255,255,0.35)"/></pattern></defs>
+  <rect width="200" height="200" fill="#666666"/><rect width="200" height="200" fill="url(#dots)"/>
+</svg>

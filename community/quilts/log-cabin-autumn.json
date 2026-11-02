@@ -1,0 +1,31 @@
+{
+  "author": "McQuilter (starter example)",
+  "block": "log-cabin",
+  "borderColor": "#606c38",
+  "cols": 5,
+  "id": "log-cabin-autumn",
+  "layout": "straight",
+  "license": "CC0-1.0",
+  "name": "Log Cabin Autumn",
+  "palette": [
+    {
+      "color": "#bc6c25",
+      "pattern": "solid"
+    },
+    {
+      "color": "#fefae0",
+      "pattern": "solid"
+    },
+    {
+      "color": "#dda15e",
+      "pattern": "gingham"
+    },
+    {
+      "color": "#606c38",
+      "pattern": "solid"
+    }
+  ],
+  "rotationMode": "none",
+  "rows": 5,
+  "schema": "mcquilter.quilt.v1"
+}

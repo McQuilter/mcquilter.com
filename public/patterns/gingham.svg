@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>McQuilter pattern tile: gingham (motif in white/black, overlaid on a base colour)</title>
+  <defs><pattern id="gingham" width="20" height="20" patternUnits="userSpaceOnUse"><rect width="10" height="20" fill="rgba(255,255,255,0.35)"/><rect width="20" height="10" fill="rgba(255,255,255,0.35)"/><rect width="10" height="10" fill="rgba(0,0,0,0.18)"/></pattern></defs>
+  <rect width="200" height="200" fill="#666666"/><rect width="200" height="200" fill="url(#gingham)"/>
+</svg>

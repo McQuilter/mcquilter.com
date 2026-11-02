@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>McQuilter pattern tile: diagonal stripes (motif in white, overlaid on a base colour)</title>
+  <defs><pattern id="stripes" width="20" height="20" patternUnits="userSpaceOnUse"><line x1="0" y1="20" x2="20" y2="0" stroke="rgba(255,255,255,0.35)" stroke-width="4"/><line x1="-5" y1="5" x2="5" y2="-5" stroke="rgba(255,255,255,0.35)" stroke-width="4"/><line x1="15" y1="25" x2="25" y2="15" stroke="rgba(255,255,255,0.35)" stroke-width="4"/></pattern></defs>
+  <rect width="200" height="200" fill="#666666"/><rect width="200" height="200" fill="url(#stripes)"/>
+</svg>
